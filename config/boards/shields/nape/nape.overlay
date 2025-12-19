@@ -89,7 +89,9 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&xiao_d 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-
-        scroll-layers = <10>;
+        res-cpi = <800>;      // CPI設定 (CONFIG_PMW3610_CPI の代わり)
+        smart-mode;           // スマートアルゴリズム有効化 (CONFIG_PMW3610_SMART_ALGORITHM の代わり)
+        invert-x;             // X軸反転 (CONFIG_PMW3610_INVERT_X の代わり)
+        #scroll-layers = <10>;
     };
 };
