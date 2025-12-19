@@ -117,6 +117,15 @@
             #binding-cells = <0>;
             bindings = <&mkp MB2>, <&to 10>;
         };
+
+        a: a {
+            compatible = "zmk,behavior-hold-tap";
+            label = "A";
+            bindings = <&mo>, <&to>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     // キーマップの定義
@@ -176,7 +185,7 @@
 
         orientation270_layer {
             bindings = <
-&lt_mkp 10 MB3  &r 10 0  &mkp MB1  &mo 8  &mo 9  &mo 11
+&a 8 10  &lt_mkp 10 MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
 
@@ -192,7 +201,7 @@
 
         btsel_layer {
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans  &bt BT_SEL 3  &bt BT_SEL 4
+&to 6  &bt BT_SEL 1  &bt BT_SEL 0  &trans  &bt BT_SEL 3  &bt BT_SEL 4
             >;
         };
 
@@ -208,7 +217,7 @@
 
         scroll_layer {
             bindings = <
-&mkp MB3  &to 6  &to 6  &trans  &trans  &trans
+&to 6  &to 6  &to 6  &trans  &trans  &trans
             >;
 
             // トラックボールの動きをスクロールに変換
