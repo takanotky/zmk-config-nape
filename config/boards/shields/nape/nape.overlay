@@ -1,3 +1,4 @@
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <physical_layouts.dtsi>
 
@@ -92,6 +93,8 @@
         res-cpi = <800>;      // CPI設定 (CONFIG_PMW3610_CPI の代わり)
         smart-mode;           // スマートアルゴリズム有効化 (CONFIG_PMW3610_SMART_ALGORITHM の代わり)
         invert-x;             // X軸反転 (CONFIG_PMW3610_INVERT_X の代わり)
+        zephyr,axis-x = <INPUT_REL_X>;
+        zephyr,axis-y = <INPUT_REL_Y>;
         #scroll-layers = <10>;
     };
 };
