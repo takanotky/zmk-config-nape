@@ -59,7 +59,7 @@
         device = <&trackball>;
         scroller {
             layers = <10>;
-            input-processors = <&zip_scroll_scaler 1 20>, <&zip_xy_to_scroll_mapper>;
+            input-processors = <&zip_scroll_scaler -1 20>, <&zip_xy_to_scroll_mapper>;
         };
     };
 };
@@ -103,6 +103,6 @@
         smart-mode;           // スマートアルゴリズム有効化 (CONFIG_PMW3610_SMART_ALGORITHM の代わり)
         zephyr,axis-x = <INPUT_REL_X>;
         zephyr,axis-y = <INPUT_REL_Y>;
-        #scroll-layers = <10>;
+        //#scroll-layers = <10>;
     };
 };
