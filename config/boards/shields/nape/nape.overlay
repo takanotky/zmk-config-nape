@@ -7,6 +7,15 @@
         zmk,kscan = &default_kscan;
         zmk,physical-layout = &physical_layout0;
     };
+    input_processors {
+        zip_scroll_scaler: zip_scroll_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_X INPUT_REL_Y>;
+            track-remainders;
+        };
+    };
 
     default_kscan: kscan {
         compatible = "zmk,kscan-gpio-direct";
@@ -50,7 +59,7 @@
         device = <&trackball>;
         scroller {
             layers = <10>;
-            input-processors = <&zip_xy_to_scroll_mapper>;
+            input-processors = <&zip_scroll_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
         };
     };
 };
